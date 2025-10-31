@@ -1,0 +1,10 @@
+# Node modules
+backend/node_modules/
+
+# Env files
+backend/.env
+
+
+# Logs
+*.log
+git add README.md
