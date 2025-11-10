@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config();
 const { connectDB } = require('./config/db');
-
+var  cors  = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth.routes');
@@ -14,6 +14,13 @@ var accountRouter = require('./routes/account.routes')
 var app = express();
 
 connectDB();
+
+app.use(cors({
+  origin: ["http://localhost:5173"], // your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 
 
 // view engine setup

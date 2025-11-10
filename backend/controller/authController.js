@@ -37,7 +37,7 @@ exports.loginCtrl = async (req, res) => {
     res.json({ message: "Login successful", token , user : userWithoutPassword });
 
   } catch (error) {
-    res.status(500).json({ message: "Server error", error: err.message });
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 }
 
